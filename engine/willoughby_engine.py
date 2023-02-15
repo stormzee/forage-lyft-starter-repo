@@ -1,4 +1,10 @@
 from engine.engine import Engine
+import os
+import sys
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
 
 class WilloughbyEngine(Engine):
     def __init__(self, last_service_date, current_mileage, last_service_mileage):

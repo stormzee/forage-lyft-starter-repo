@@ -1,13 +1,15 @@
-from abc import ABC, staticmethod 
 from car import Car
-from datetime import datetime
 from engine.capulet_engine import CapuletEngine
 from engine.sternman_engine import SternmanEngine
 from engine.willoughby_engine import WilloughbyEngine
 from battery.nubbinbattery import NubbinBattery
 from battery.spindlerbattery import SpindlerBattery
 
+import os
+import sys
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
 
 class CarFactory:
     
@@ -26,7 +28,7 @@ class CarFactory:
         
         battery = SpindlerBattery(last_service_date, current_date)
         engine = WilloughbyEngine(last_service_date, current_mileage, last_service_mileage)
-        glissage = Car(engine, battery)
+        glissade = Car(engine, battery)
             
         return glissade
     
@@ -35,10 +37,10 @@ class CarFactory:
     def create_palindrome(current_date, last_service_date, warning_light_on): 
     
         battery = SpindlerBattery(last_service_date, current_date)
-        engine = SternmanEngine(last_service_date, warning_light_is_on)
+        engine = SternmanEngine(last_service_date, warning_light_on)
         palindrome = Car(engine, battery)
             
-        return palinndrome
+        return palindrome
     
     
     @staticmethod

@@ -1,9 +1,15 @@
-from abc import ABC
-from car import Car
+import os
+import sys
+import datetime
+from datetime import datetime
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
 
 from battery.battery import Battery
 
-class NubbunBattery(Battery):
+class NubbinBattery(Battery):
     
     def __init__(self, last_service_date, current_date):
         self.last_service_date = last_service_date

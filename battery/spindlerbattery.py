@@ -1,4 +1,11 @@
 from battery.battery import Battery
+import os
+import sys
+import datetime
+from datetime import datetime
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
 
 class SpindlerBattery(Battery):
     
